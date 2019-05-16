@@ -7,8 +7,11 @@ class Blog(models.Model):
     description = models.TextField()
 
 
-class Data(models.Model):
+class SQLData(models.Model):
     fill_me = models.CharField(max_length=1000)
+
+    def __str__(self):
+        return self.fill_me
 
 # _MONGODB_USER = 'mongouser'
 # _MONGODB_PASSWD = 'password'
