@@ -18,12 +18,13 @@ from django.conf.urls import url
 from django.urls import path, include
 from django.views.generic.base import TemplateView
 from app.views import fill_view1
+from app2.views import fill_view2
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
-    url('1', fill_view1, name='fillview'),
+    url('1', fill_view1, name='fillview1'),
+    url('2', fill_view2, name='fillview2'),
     # path('1', TemplateView.as_view(template_name='Page1.html'), name='1'),
-    path('2', TemplateView.as_view(template_name='Page2.html'), name='2'),
     path('', TemplateView.as_view(template_name='home.html'), name='home'),
 ]

@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'app'
+    'app',
+    'app2'
 ]
 
 MIDDLEWARE = [
@@ -89,11 +90,12 @@ DATABASES = {
         'NAME': 'test',
         'ENGINE': 'djongo',
         'HOST': 'mongodb+srv://' + username + ':' + urllib.parse.quote(password) + '@cluster0-twkwn.gcp.mongodb.net/test?retryWrites=true',
-        'USER': username,
-        'PASSWORD': password
+        # 'USER': username,
+        # 'PASSWORD': password
     }
 }
 
+DATABASE_ROUTERS = ['multidb.database_router.DataBaseRouter']
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators

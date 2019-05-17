@@ -1,1 +1,11 @@
 <h1>Hey I am Groooot Page 2 </h1>
+
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="" method="post">
+    {% csrf_token %}
+
+    {{form}}
+    <input type="submit" value="submit">
+</form>
